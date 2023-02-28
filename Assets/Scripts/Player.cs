@@ -12,6 +12,8 @@ public class Player : MonoBehaviour
 
     private Vector3 _leftFaceVector;
     private Vector3 _rightFaceVector;
+    
+    private float _rightDirectionX = 1;
 
     private void Awake()
     {
@@ -38,14 +40,9 @@ public class Player : MonoBehaviour
     {
         int movementSign = Math.Sign(movement.x);
 
-        if (movementSign == -1)
-        {
-            _visual.localScale = _leftFaceVector;
-        }
-        else if (movementSign == 1)
-        {
-            _visual.localScale = _rightFaceVector;
-        }
+        _visual.localScale = movementSign == _rightDirectionX 
+            ? _rightFaceVector
+            : _leftFaceVector;        
     }   
 
     private void OnDead()

@@ -2,12 +2,12 @@ using System;
 using UnityEngine;
 
 public class Health : MonoBehaviour
-{
-    public event Action Dead;
-    public event Action ValueChanged;
-
+{   
     public int Value { get; private set; }
     public int MaxValue { get; } = 3;
+
+    public event Action Dead;
+    public event Action ValueChanged;
 
     public void Init()
     {
@@ -49,6 +49,5 @@ public class Health : MonoBehaviour
         }
 
         ValueChanged?.Invoke();
-    }
-    
+    }    
 }

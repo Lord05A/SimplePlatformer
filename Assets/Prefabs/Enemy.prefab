@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cca10dce2fbde742b97a296d8e1c9a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LayerMask:
+  _layerMask:
     serializedVersion: 2
     m_Bits: 1
   _minGroundNormalY: 0.65
@@ -169,7 +169,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 7
+  m_Constraints: 5
 --- !u!70 &4397380784020869561
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

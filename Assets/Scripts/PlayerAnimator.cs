@@ -3,9 +3,11 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public class PlayerAnimator : MonoBehaviour
 {
-    private const string StateParameter = "State";    
-    private Animator _animator;
+    private const string StateParameter = "State";
+
     [SerializeField] private PhysicsMovement _playerMovement;
+
+    private Animator _animator;    
 
     private void Awake()
     {

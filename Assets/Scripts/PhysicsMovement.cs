@@ -6,11 +6,9 @@ using UnityEngine;
 public class PhysicsMovement : MonoBehaviour
 {
     private const float MinMoveDistance = 0.001f;
-    private const float ShellRadius = 0.01f;
-
-    public event Action<PlayerState> PlayerStateChanged;
+    private const float ShellRadius = 0.01f;    
     
-    public LayerMask LayerMask;
+    [SerializeField] private LayerMask _layerMask;
 
     [SerializeField] private float _minGroundNormalY = .65f;
     [SerializeField] private float _gravityModifier = 1f;
@@ -30,6 +28,10 @@ public class PhysicsMovement : MonoBehaviour
     private PlayerState _previousPlayerState;
     private PlayerState _playerState;
 
+    private float _jumpVelocityY = 5;
+
+    public event Action<PlayerState> PlayerStateChanged;
+
     private void Awake()
     {
         _rb2d = GetComponent<Rigidbody2D>();
@@ -38,7 +40,7 @@ public class PhysicsMovement : MonoBehaviour
     private void Start()
     {
         _contactFilter.useTriggers = false;
-        _contactFilter.SetLayerMask(LayerMask);
+        _contactFilter.SetLayerMask(_layerMask);
         _contactFilter.useLayerMask = true;
     }
 
@@ -48,7 +50,7 @@ public class PhysicsMovement : MonoBehaviour
 
         if (isTryJump && _isGrounded)
         {
-            _velocity = new Vector2(_velocity.x, 5);
+            _velocity = new Vector2(_velocity.x, _jumpVelocityY);
         }
     }    
 
