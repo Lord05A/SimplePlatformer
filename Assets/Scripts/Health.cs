@@ -16,7 +16,7 @@ public class Health : MonoBehaviour
         ValueChanged = null;
     }
     
-    public void GetDamage(int damage)
+    public void ApplyDamage(int damage)
     {
         if (damage < 0)
         {
@@ -34,7 +34,7 @@ public class Health : MonoBehaviour
         ValueChanged?.Invoke();
     }
 
-    public void GetHeal(int heal)
+    public void HealUp(int heal)
     {
         if (heal < 0)
         {

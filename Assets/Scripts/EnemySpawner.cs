@@ -1,4 +1,1 @@
-public class EnemySpawner : PrefabSpawner<Enemy>
-{    
-
-}
+public class EnemySpawner : PrefabSpawner<Enemy> { }

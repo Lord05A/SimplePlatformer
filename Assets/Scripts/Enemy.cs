@@ -12,7 +12,9 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
-        _currentDirection = Random.value > 0.5f 
+        float fiftyPercentChance = 0.5f;
+
+        _currentDirection = Random.value > fiftyPercentChance
             ? _leftDirection 
             : _rightDirection;
     }

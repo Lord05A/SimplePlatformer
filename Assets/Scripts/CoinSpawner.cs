@@ -1,4 +1,1 @@
-public class CoinSpawner : PrefabSpawner<Coin>
-{   
-
-}
+public class CoinSpawner : PrefabSpawner<Coin> { }
